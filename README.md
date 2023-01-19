@@ -1,4 +1,4 @@
-## 01 <br/>
+## 01 기본 설정<br/>
 JDK Download & Setting<br/>
 STS Download & Setting<br/>
 Tomcat 연결<br/>
