@@ -7,6 +7,6 @@ Tomcat 연결<br/>
 pom.xml 버전변경<br/>
 
 ## 02 Lombok<br/>
-Lombok 설치
-Lombok 설정
+Lombok 설치<br/>
+Lombok 설정<br/>
 
