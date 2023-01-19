@@ -7,6 +7,6 @@ Tomcat 연결<br/>
 pom.xml 버전변경<br/>
 
 ## 02 Lombok<br/>
-Lombok 설치<br/>
+Lombok 설치(maven)<br/>
 Lombok 설정<br/>
-
+Junit 단위 테스트<br/>
