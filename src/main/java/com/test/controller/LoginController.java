@@ -22,7 +22,7 @@ public class LoginController {
 	void loginform() {
 		log.info("login Get...");
 		
-		throw new NullPointerException("login get 에서 발생!!");
+//		throw new NullPointerException("login get 에서 발생!!");
 		
 	}
 	
