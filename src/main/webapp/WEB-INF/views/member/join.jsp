@@ -29,7 +29,7 @@
 	<form id="joinfrm" name="joinfrm" action="${pageContext.request.contextPath}/member/save" method="post" onsubmit="return false">
 		<input type="text" name="email" placeholder="example@example.com" class="form-control" />
 		<input type="password" name="pwd"  placeholder="Insert Password" class="form-control" />
-		
+		<input type="text" name="birth"  placeholder="Insert BirthDay" class="form-control" />
 		<div class="row" style="margin-bottom:0px;" id="SMSAuth">
 			<div class="col-8">
 				<input type="text" name="phone"  placeholder="-없이 입력하세요" class="form-control" />

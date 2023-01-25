@@ -1,5 +1,7 @@
 package com.test.dto;
 
+import java.util.Date;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,8 +11,9 @@ public class MemberDto {
 	private String email;
 	private String pwd;
 	private String phone;
-	private String zipcode;
+	private int zipcode;
+	private Date birth;	//String->Date
 	private String addr1;
 	private String addr2;
-	private String grade;
+	private int grade;
 }
