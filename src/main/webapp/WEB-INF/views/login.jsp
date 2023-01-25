@@ -18,8 +18,9 @@
 	<form name="loginfrm" action=<c:url value="/login" />  method="post">
 		<input type="text" name="email" placeholder="example@example.com"  value="${cookie.email.value}" class="form-control" />
 		<input type="password" name="pwd"  placeholder="Insert Password"  class="form-control" />
-		<div>
-			<input type="checkbox" name="rememberId"  class="form-check-input"" /> ID 저장
+		<div style="text-align:left;">
+			<input type="checkbox" name="rememberId"  class="form-check-input" id="chk" /> <label for="chk">Remember ID</label>
+		
 		</div>
 		<button class="btn btn-primary w-100">로그인</button>
 		<a class="w-100 btn btn-secondary" href="javascript:kakaoLogin()">카카오로그인</a>
