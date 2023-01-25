@@ -18,8 +18,9 @@
 	<header>
 		<div class="top-header">
 			<ul>
+				<li>${authdto.email} 님환영합니다.</li>
 				<li><a href="javascript:void(0)">나의정보</a></li>
-				<li><a href="${pageContext.request.contextPath}/auth/logout.do">로그아웃</a></li>
+				<li><a href="${pageContext.request.contextPath}/logout">로그아웃</a></li>
 				<li><a href="javascript:kakaoLogout()">카카오로그아웃</a></li>
 			</ul>
 		</div>
