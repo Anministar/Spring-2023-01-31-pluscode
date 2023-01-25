@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.propertyeditors.CustomDateEditor;
+import org.springframework.beans.propertyeditors.StringArrayPropertyEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,8 +30,9 @@ public class MemberController {
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(df,false));//false :null허용x
 																				// true : null허용 o
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(df2,false));
-		
+		binder.registerCustomEditor(String[].class,new StringArrayPropertyEditor("-"));
 	}
+	
 	
 	
 
