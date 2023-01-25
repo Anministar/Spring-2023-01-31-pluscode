@@ -29,9 +29,6 @@ public class HomeController {
 		return "main";
 	}
 	
-	@GetMapping("/login")
-	void loginform() {
-		log.info("login form...");
-	}
+
 	
 }
