@@ -36,7 +36,8 @@ Date 변환<br/>
 String[] 변환<br/>
 
 ## 09 유효성 체크
-Local Validator<br/>
+Local - Login Validator<br/>
+Local - Member Validator<br/>
 Global Validator<br/>
 
 ## 10 DataSource
