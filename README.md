@@ -44,4 +44,5 @@ DataSource - root-context.xml<br/>
 Servlet Code 가져오기(@Service,@Controller,@Repository)<br/>
 
 ## 11 AOP
-@Aspect @Advice Pattern<br/>
+@Aspect <br/>
+@Advice execution Pattern<br/>
