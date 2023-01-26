@@ -38,3 +38,7 @@ String[] 변환<br/>
 ## 09 유효성 체크
 Local Validator<br/>
 Global Validator<br/>
+
+## 10 DataSource
+DataSource - root-context.xml<br/>
+@Service @Repository @Autowired<br/>
