@@ -58,7 +58,7 @@
 		<input type="text" name="addr2"  placeholder="상세주소 입력" class="form-control" />
 		<button class="btn btn-secondary" onclick="isValid()">회원가입</button>
 		<input type="reset" value="초기화" class="btn btn-danger" />
-		<a href="${pageContext.request.contextPath}/auth/login.do" class="btn btn-warning">이전으로</a>
+		<a href="${pageContext.request.contextPath}/login" class="btn btn-warning">이전으로</a>
 	</form:form>
 </section>
 
@@ -68,7 +68,7 @@
 		const joinfrm = document.joinfrm;
 		alert("[JS] func isValid");
 		//email 공백여부 등 Validation Check
-		
+		joinfrm.action="${pageContext.request.contextPath}/member/save";
 		joinfrm.submit();
 	}
 </script>
