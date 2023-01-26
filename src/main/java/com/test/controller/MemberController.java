@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.StringArrayPropertyEditor;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.test.dto.MemberDto;
+import com.test.service.MemberService;
 import com.test.validation.MemberValidator;
 
 import lombok.extern.log4j.Log4j;
@@ -28,6 +30,9 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/member")
 @Log4j
 public class MemberController {
+	
+	@Autowired
+	MemberService service;
 	
 	@InitBinder
 	public void toDate(WebDataBinder binder) {
@@ -70,9 +75,11 @@ public class MemberController {
 		}
 		
 		//3 서비스실행
+		boolean r=service.memberJoin(memberDto);
 		
 		//4 뷰로이동
-		return "login";
+		model.addAttribute("msg","회원가입 성공!");
+		return "redirect:/login";
 		//return "joinresult";
 	}
 

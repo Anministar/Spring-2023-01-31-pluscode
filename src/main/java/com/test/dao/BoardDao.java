@@ -23,7 +23,6 @@ public class BoardDao {
 	@Autowired
 	private DataSource ds;
 
-	//싱글톤패턴
 	
 	//SELECTAll
 	public List<BoardDto> SelectAll(int startno, int amount) {
