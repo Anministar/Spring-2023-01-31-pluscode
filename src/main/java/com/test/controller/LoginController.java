@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,8 +19,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.test.dto.AuthDto;
 import com.test.dto.LoginDto;
+import com.test.service.AuthService;
 import com.test.validation.LoginValidator;
 
 import lombok.extern.log4j.Log4j;
@@ -28,6 +29,9 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 public class LoginController {
 
+	@Autowired
+	AuthService service;
+	
 	@InitBinder
 	public void IDPWInit(WebDataBinder binder) {
 		//유효성 체크
@@ -66,20 +70,20 @@ public class LoginController {
 		//1) DB id/pw 와 파라미터 id/pw 일치여부 확인
 		//2) 일치하다면 - 세션객체생성 최소한의 정보를 저장
 		//3) 기타(쿠키)
-		HttpSession session = request.getSession();
-		AuthDto adto = new AuthDto();
-		adto.setEmail(loginDto.getEmail());
-		adto.setGrade("1");
-		session.setAttribute("authdto", adto);
-		
-		if(loginDto.isRememberId()) {
-			Cookie cookie = new Cookie("email",loginDto.getEmail());
-			response.addCookie(cookie);
-		}else {
-			Cookie cookie = new Cookie("email",loginDto.getEmail());
-			cookie.setMaxAge(0);
-			response.addCookie(cookie);
+		boolean flag = service.LoginCheck(loginDto, request);
+		if(flag)
+		{
+			if(loginDto.isRememberId()) {
+				Cookie cookie = new Cookie("email",loginDto.getEmail());
+				response.addCookie(cookie);
+			}else {
+				Cookie cookie = new Cookie("email",loginDto.getEmail());
+				cookie.setMaxAge(0);
+				response.addCookie(cookie);
+			}
 		}
+		
+		
 		//4 뷰
 		return "redirect:/";
 		
