@@ -16,13 +16,13 @@ MVC-Presentation Layer<br/>
 Parameter 전달<br/>
 
 ## 04 Get&Post Mapping
--<br/>
--<br/>
+@RequestMapping<br/>
+@GetMapping / @PostMapping<br/>
 
 ## 05 Cookie
--<br/>
--<br/>
+쿠키 생성<br/>
+ID/PW 저장<br/>
 
 ## 06 Session
--<br/>
--<br/>
+세션 생성<br/>
+로그인 / <br/>
