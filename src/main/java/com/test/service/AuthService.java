@@ -26,6 +26,7 @@ public class AuthService {
 	
 	public static String code;
 	BCrypt bc = new BCrypt();
+ 
 	
 	@Autowired
 	MemberDao dao;
