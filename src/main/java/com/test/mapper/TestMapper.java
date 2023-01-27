@@ -2,7 +2,8 @@ package com.test.mapper;
 
 import org.apache.ibatis.annotations.Select;
 
- 
+import org.apache.ibatis.annotations.Select;
+
 public interface TestMapper {
 
 	//XML
