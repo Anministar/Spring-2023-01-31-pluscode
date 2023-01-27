@@ -25,8 +25,8 @@ public class MybatisTests {
 	@Test 
 	public void func1() {
 		log.info("mapper : " + mapper);
-		int cnt = mapper.countXML();
-		log.info("CountXML :" + cnt);
+		log.info("CountXML :" + mapper.countXML());
+		log.info("CountAT :" + mapper.countAt());
 	}
 	
 }
