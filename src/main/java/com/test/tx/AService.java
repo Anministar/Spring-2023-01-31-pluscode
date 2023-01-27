@@ -2,6 +2,7 @@ package com.test.tx;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.test.dto.TestDto;
@@ -21,24 +22,23 @@ public class AService {
 	@Transactional(rollbackFor=Exception.class)
 	public void func1() throws Exception{
 		adao.insert(new TestDto(1,"aa"));
-		bservice.func1();
 		adao.insert(new TestDto(2,"bb"));
 	}
 	
-	
-	@Transactional(rollbackFor=Exception.class)
+	//Propagation.REQUIRED :기본값
+	@Transactional(propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
 	public void func2() throws Exception{
 		adao.insert(new TestDto(1,"aa"));
 		bservice.func2();
-		adao.insert(new TestDto(2,"bb"));
+		adao.insert(new TestDto(1,"bb"));
 	}
 	
 	
-	@Transactional(rollbackFor=Exception.class)	
+	@Transactional(propagation=Propagation.REQUIRES_NEW, rollbackFor=Exception.class)	
 	public void func3() throws Exception{
 		adao.insert(new TestDto(1,"aa"));
 		bservice.func3();
-		adao.insert(new TestDto(2,"bb"));
+		adao.insert(new TestDto(1,"bb"));
 	}
 	
 }

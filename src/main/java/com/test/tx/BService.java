@@ -2,6 +2,7 @@ package com.test.tx;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.test.dao.TestDao;
@@ -20,18 +21,18 @@ public class BService{
 	@Transactional(rollbackFor=Exception.class)
 	public void func1() throws Exception{
 		bdao.insert(new TestDto(1,"aa"));
-		bdao.insert(new TestDto(2,"bb"));
+		bdao.insert(new TestDto(1,"bb"));
 	}
 	
 	
-	@Transactional(rollbackFor=Exception.class)
+	@Transactional(propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
 	public void func2() throws Exception{
 		bdao.insert(new TestDto(1,"aa"));
 		bdao.insert(new TestDto(2,"bb"));
 	}
 	
 	
-	@Transactional(rollbackFor=Exception.class)	
+	@Transactional(propagation=Propagation.REQUIRES_NEW, rollbackFor=Exception.class)
 	public void func3() throws Exception{
 		bdao.insert(new TestDto(1,"aa"));
 		bdao.insert(new TestDto(2,"bb"));
