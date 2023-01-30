@@ -55,6 +55,7 @@ Propagation <br/>
 
 ## 13 Mybatis
 SqlSessionFactory,SqlSession <br/>
-Mapper Mapper.XML <br/>
+Mapper XML <br/>
 Mybati Query Annotation<br/>
 ServiceImpl - DaoImpl - Mapper Setting<br/>
+Dynamic Query -KeyField/Keyword Search(if,Choose,foreach)<br/>
