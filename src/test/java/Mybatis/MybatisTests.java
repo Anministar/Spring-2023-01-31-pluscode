@@ -53,10 +53,30 @@ public class MybatisTests {
 	}
 	@Test
 	public void func5() {
-		TestDto dto = new TestDto(0,"tete");
-		mapper.insertKeyBeforeXML(dto);
+//		TestDto dto = new TestDto(0,"tete");
+//		mapper.insertKeyBeforeXML(dto);
+//		log.info("beforeKey : "+dto.getId());
+
+		TestDto dto = new TestDto(0,"aabbcc");
+		mapper.insertKeyAfterXML(dto);
 		log.info("beforeKey : "+dto.getId());
-		
+	}
+	@Test
+	public void func6() {
+		TestDto dto = new TestDto(0,"tt");
+		 mapper.insertKeyBeforeAT(dto);
+		 log.info("beforeKey : " + dto.getId()); //insert되기전 key 최대값
+		 dto.setName("oo");
+		 mapper.insertKeyAfterAT(dto);
+		 log.info("afterKey : " + dto.getId());	//insert이후의 key 최대값
+		 
+	}
+	@Test
+	public void func7() {
+		//mapper.updateXML(new TestDto(1,"홍길동!"));
+		//mapper.deleteXML(1);
+		//mapper.updateAT(new TestDto(2,"정우균"));
+		mapper.deleteAT(2);
 	}
 }
 

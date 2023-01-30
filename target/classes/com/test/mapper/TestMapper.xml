@@ -38,5 +38,23 @@
 		Insert into tbl_a values(null,#{name})
 	</insert>
 	
+	<insert id="insertKeyAfterXML" parameterType="com.test.dto.TestDto">
+		<selectKey	order="AFTER" keyProperty="id" resultType="int">
+			select max(id) from tbl_a
+		</selectKey>
+		Insert into tbl_a values(null,#{name})
+	</insert>	
+	
+	
+	
+	<update id="updateXML" parameterType="com.test.dto.TestDto">
+		Update tbl_a SET name=#{name} where id=#{id}
+	</update>
+	
+	<delete id="deleteXML" parameterType="int">
+		Delete from tbl_a where id=#{id}
+	</delete>
+	
+	
 	
 </mapper>
