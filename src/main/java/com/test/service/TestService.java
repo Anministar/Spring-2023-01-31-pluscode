@@ -1,11 +1,10 @@
 package com.test.service;
 
+import com.test.dto.TestDto;
+
 public interface TestService {
+	
+	public TestDto GetTestObject(int id);
 
-	void func1() throws Exception;
-
-	void func2() throws Exception;
-
-	void func3() throws Exception;
 
 }

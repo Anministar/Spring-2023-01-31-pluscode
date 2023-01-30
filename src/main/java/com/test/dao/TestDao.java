@@ -4,6 +4,6 @@ import com.test.dto.TestDto;
 
 public interface TestDao {
 
-	int insert(TestDto dto) throws Exception;
+	public TestDto select(int id);	 
 
 }

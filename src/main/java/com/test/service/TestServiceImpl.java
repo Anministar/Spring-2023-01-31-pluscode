@@ -17,25 +17,11 @@ public class TestServiceImpl implements TestService {
 	TestDao dao;
 
 	@Override
-	public void func1() throws Exception{
-		dao.insert(new TestDto(6,"ff"));
-		dao.insert(new TestDto(6,"ff"));
-	}
-	
-	@Override
 	@Transactional(rollbackFor=Exception.class)
-	public void func2() throws Exception{
-		dao.insert(new TestDto(6,"ff"));
-		dao.insert(new TestDto(6,"ff"));
+	public TestDto GetTestObject(int id) {
+		return dao.select(id);
 	}
-	
-	@Override
-	@Transactional	//RuntimeException발생시에만 적용...
-	public void func3() throws Exception{
-		dao.insert(new TestDto(6,"ff"));
-		throw new RuntimeException();
-		//dao.insert(new TestDto(6,"ff"));
-	}
+
 	
 }
 
