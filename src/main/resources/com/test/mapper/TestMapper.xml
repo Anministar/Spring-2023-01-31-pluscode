@@ -57,4 +57,19 @@
 	
 	
 	
+	<insert id="insertXMLHashmap" parameterType="hashmap">
+		Insert into tbl_a values(${id},#{name})
+	</insert>
+	
+	
+	<insert id="insertXMLHashmap2" parameterType="hashmap">
+		Insert into tbl_a 
+		values
+		<foreach item="item" collection="list" separator=",">
+			(#{item.id},#{item.name})
+		</foreach>
+	</insert>
+	
 </mapper>
+
+

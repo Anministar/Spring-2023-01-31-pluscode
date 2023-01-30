@@ -1,6 +1,9 @@
 package Mybatis;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -77,6 +80,28 @@ public class MybatisTests {
 		//mapper.deleteXML(1);
 		//mapper.updateAT(new TestDto(2,"정우균"));
 		mapper.deleteAT(2);
+	}
+	
+	@Test
+	public void func8() {
+		Map<String,Object> map = new HashMap();	
+		map.put("id", 200);
+		map.put("name", "Test!!");
+		mapper.insertXMLHashmap(map);		
+	}
+	@Test
+	public void func9() {
+		List<TestDto> list = new ArrayList();
+		list.add(new TestDto(400,"aaa"));
+		list.add(new TestDto(401,"bbb"));
+		list.add(new TestDto(402,"ccc"));
+		list.add(new TestDto(403,"ddd"));
+		list.add(new TestDto(404,"eee"));
+		
+		Map<String,Object> map = new HashMap();	
+		map.put("list",list);
+		
+		mapper.insertXMLHashmap2(map);
 	}
 }
 

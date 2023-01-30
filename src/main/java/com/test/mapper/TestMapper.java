@@ -1,6 +1,7 @@
 package com.test.mapper;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -55,4 +56,8 @@ public interface TestMapper {
 	int updateAT(TestDto dto);
 	@Delete("Delete from tbl_a where id=#{id}")
 	int deleteAT(int id);
+	
+	int insertXMLHashmap(Map<String,Object> map);
+	
+	int insertXMLHashmap2(Map<String,Object> map);
 }
