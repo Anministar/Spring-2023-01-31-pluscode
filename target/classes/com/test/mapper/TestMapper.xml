@@ -70,8 +70,18 @@
 		</foreach>
 	</insert>
 	
+	
+	
 	<select id="selectXMLHashMap" resultType="hashmap">
 		select * from tbl_a
+	</select>
+	
+	
+	<select id="selectXMLHashMapIf" resultType="hashmap" parameterType="hashmap">
+		select * from tbl_a
+		<if test='type.equals("name")'> 
+			where name like concat('%',#{keyword},'%')
+		</if>
 	</select>
 	
 	
