@@ -56,5 +56,5 @@ Propagation <br/>
 ## 13 Mybatis
 SqlSessionFactory,SqlSession <br/>
 Mapper Interface - Mapper.XML <br/>
-Mybatis @Select @Update...<br/>
+Mybatis @Select @Insert @SelectKey @Update @Delete<br/>
 DaoImpl - Mapper<br/>
