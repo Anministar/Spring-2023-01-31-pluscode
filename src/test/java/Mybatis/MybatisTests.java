@@ -103,6 +103,14 @@ public class MybatisTests {
 		
 		mapper.insertXMLHashmap2(map);
 	}
+	
+	@Test
+	public void func10() {
+		
+		List<Map<String,Object>> list = mapper.selectXMLHashMap();
+		log.info("Total : " +list.size());
+		list.forEach(map->{log.info(map.get("id") +","+map.get("name")   ); });
+	}
 }
 
 

@@ -60,4 +60,9 @@ public interface TestMapper {
 	int insertXMLHashmap(Map<String,Object> map);
 	
 	int insertXMLHashmap2(Map<String,Object> map);
+	
+	
+	List<Map<String,Object>> selectXMLHashMap();
+	
+	
 }

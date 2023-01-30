@@ -70,6 +70,11 @@
 		</foreach>
 	</insert>
 	
+	<select id="selectXMLHashMap" resultType="hashmap">
+		select * from tbl_a
+	</select>
+	
+	
 </mapper>
 
 
