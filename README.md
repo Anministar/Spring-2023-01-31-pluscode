@@ -57,4 +57,4 @@ Propagation <br/>
 SqlSessionFactory,SqlSession <br/>
 Mapper Mapper.XML <br/>
 Mybati Query Annotation<br/>
-ServiceImple - DaoImple - Mapper Setting<br/>
+ServiceImpl - DaoImpl - Mapper Setting<br/>
