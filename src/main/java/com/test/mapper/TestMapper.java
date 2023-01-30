@@ -3,6 +3,7 @@ package com.test.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import com.test.dto.TestDto;
@@ -29,4 +30,9 @@ public interface TestMapper {
 	
 	@Insert("Insert into tbl_a values(#{id},#{name})")
 	public int insertAT(TestDto dto);
+	
+	public int insertPARAM(@Param("id")int i , @Param("name")String n);
+	
+	
+	public int insertKeyBeforeXML(TestDto dto);
 }

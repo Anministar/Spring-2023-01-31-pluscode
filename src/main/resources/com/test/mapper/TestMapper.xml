@@ -27,4 +27,16 @@
 		Insert into tbl_a values(#{id},#{name})
 	</insert>
 	
+	<insert id="insertPARAM">
+		Insert into tbl_a values(#{id},#{name})
+	</insert>
+	
+	<insert id="insertKeyBeforeXML" parameterType="com.test.dto.TestDto">
+		<selectKey	order="BEFORE" keyProperty="id" resultType="int">
+			select max(id) from tbl_a
+		</selectKey>
+		Insert into tbl_a values(null,#{name})
+	</insert>
+	
+	
 </mapper>

@@ -48,7 +48,15 @@ public class MybatisTests {
 	@Test
 	public void func4() {
 		//mapper.insertXML(new TestDto(4,"hoho"));
-		mapper.insertAT(new TestDto(5,"test"));
+		//mapper.insertAT(new TestDto(5,"test"));
+		mapper.insertPARAM(6, "abc");
+	}
+	@Test
+	public void func5() {
+		TestDto dto = new TestDto(0,"tete");
+		mapper.insertKeyBeforeXML(dto);
+		log.info("beforeKey : "+dto.getId());
+		
 	}
 }
 
