@@ -1,11 +1,14 @@
 package Mybatis;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.test.dto.TestDto;
 import com.test.mapper.TestMapper;
 
 import lombok.extern.log4j.Log4j;
@@ -26,6 +29,27 @@ public class MybatisTests {
 		log.info("CountAT :" + mapper.countAt());
 	}
 	
+	@Test
+	public void func2() {
+//		TestDto dto = mapper.selectXML(2);
+		log.info("DTOXML : " + mapper.selectXML(2));
+		log.info("DTOAt : " + mapper.selectAT(3));
+	}
+	@Test 
+	public void func3() {
+		List<TestDto> list = mapper.selectXML2(1);
+		for(TestDto dto : list) {
+			log.info(dto);
+		}
+		log.info("--------------------------");
+		mapper.selectAT2(2).forEach((dto)->{log.info(dto);});
+	}
+	
+	@Test
+	public void func4() {
+		//mapper.insertXML(new TestDto(4,"hoho"));
+		mapper.insertAT(new TestDto(5,"test"));
+	}
 }
 
 

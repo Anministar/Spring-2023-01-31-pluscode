@@ -2,7 +2,6 @@
 //
 //import java.sql.Connection;
 //
-//import org.apache.ibatis.session.SqlSession;
 //import org.apache.ibatis.session.SqlSessionFactory;
 //import org.junit.Test;
 //import org.junit.runner.RunWith;

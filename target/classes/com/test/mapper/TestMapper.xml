@@ -11,4 +11,20 @@
 		Select count(*) from tbl_a
 	</select>
 
+	<!-- SELECT -->
+	<select id="selectXML" resultType="com.test.dto.TestDto" parameterType="int">
+		Select * from tbl_a where id=#{id}
+	</select>
+	
+	<!-- SELECT -->
+	<select id="selectXML2" resultType="com.test.dto.TestDto" parameterType="int">
+		<![CDATA[
+			Select * from tbl_a where id>=#{id}
+		]]>
+	</select>	
+	
+	<insert id="insertXML">
+		Insert into tbl_a values(#{id},#{name})
+	</insert>
+	
 </mapper>
