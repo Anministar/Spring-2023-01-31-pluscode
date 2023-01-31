@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 import lombok.extern.log4j.Log4j;
 
-@WebFilter("/*")
+//@WebFilter("/*")
 @Log4j
 public class forwardloginfilter implements Filter{
 
