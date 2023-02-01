@@ -77,4 +77,11 @@ public class RestTestController {
 		System.out.println("DTO : " + dto);
 		return dto;
 	}
+	
+	
+	@PostMapping("/PostReq")
+	public TestDto func7(@RequestBody TestDto dto) {
+		System.out.println("DTO : " + dto);
+		return dto;
+	}
 }
